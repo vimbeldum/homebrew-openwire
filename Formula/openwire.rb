@@ -1,10 +1,10 @@
 class Openwire < Formula
-  desc "Decentralized P2P local network messenger - encrypted, anonymous, zero-config"
+  desc "P2P encrypted messenger for local networks with zero configuration"
   homepage "https://github.com/vimbeldum/openwire"
-  url "https://github.com/vimbeldum/openwire/archive/refs/tags/v0.9.4.tar.gz"
-  sha256 "9f955f38cf643a3277c0c607ba7af67b4d589ad2664e2744d0b613e595eb3b6d"
-  version "0.9.4"
+  url "https://github.com/vimbeldum/openwire/archive/refs/tags/v0.9.5.tar.gz"
+  sha256 "39a132e0b82d41ee2f69da2843926372d4480be350bcd153c28a47d63091d740"
   license "MIT"
+  head "https://github.com/vimbeldum/openwire.git", branch: "master"
 
   depends_on "rust" => :build
 
@@ -13,6 +13,6 @@ class Openwire < Formula
   end
 
   test do
-    assert_match "openwire", shell_output("#{bin}/openwire --help")
+    assert_match "openwire", shell_output("#{bin}/openwire --version")
   end
 end
